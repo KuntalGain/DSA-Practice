@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+using namespace std;
+
+int firstUniqChar(string s) {
+
+    unordered_map<char,int> mp;
+
+    for(auto i : s) mp[i]++;
+
+    for(int i = 0 ; i < s.size() ; i++) {
+        if(mp[s[i]] == 1)
+            return i;
+    }
+
+    return -1;
+
+}
+
+// driver code
+
+int main()
+{
+    string str;
+    cin >> str;
+
+    cout << firstUniqChar(str);
+}

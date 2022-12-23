@@ -26,3 +26,33 @@ bool hasCycle(ListNode* head) {
 
     return false;
 }
+
+// driver code
+
+int main() {
+    
+    int pos;
+    cout << "Enter Your Position : " << endl;
+    cin >> pos;
+
+    ListNode *ll = new ListNode(1);
+    ll->next = new ListNode(2);
+    ll->next->next = new ListNode(3);
+    ll->next->next->next = new ListNode(4);
+
+    int cnt = 0;
+
+    ListNode *curr = ll;
+    while (curr) {
+        cnt++;
+        curr = curr->next;
+    }
+
+    if(hasCycle(ll) && pos <= cnt)
+        cout << "Exists" << endl;
+    else {
+        cout << "Not Exists" << endl;
+    }
+
+    return 0;
+}
